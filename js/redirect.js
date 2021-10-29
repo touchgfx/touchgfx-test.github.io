@@ -1,5 +1,5 @@
 if (window && window.location) {
-  let version_regex = /^touchgfx-test\.github\.io\/([0-9]*.[0-9]*)/
+  let version_regex = /^touchgfx-test\.github\.io\.com\/([0-9]*.[0-9]*)/
   // && window.location.pathname.endsWith('/') && window.location.pathname !== '/'
   let path = window.location.pathname
   let match = path.match(version_regex)
