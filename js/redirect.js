@@ -3,6 +3,7 @@ if (window && window.location) {
   // && window.location.pathname.endsWith('/') && window.location.pathname !== '/'
   let path = window.location.pathname
   let match = version_regex.test(path)
+  console.log(path)
   console.log(match)
   if (match == false) {
     path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.19")
