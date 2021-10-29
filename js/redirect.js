@@ -5,8 +5,12 @@ if (window && window.location) {
   let match = path.match(version_regex)
   console.log(match)
   if (match == null) {
-    let new_path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.19")
-    console.log(new_path)
+    path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.19")
   }
+  if(path.endsWith('/') && path !== '/') {
+    path = path.substr(0, path.length - 1)
+  }
+  console.log(path)
+
   // window.history.replaceState('', '', window.location.pathname.substr(0, window.location.pathname.length - 1) + window.location.hash)
 }
