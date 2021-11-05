@@ -6,7 +6,7 @@ if (window && window.location) {
   console.log(path)
   console.log(match)
   if (match == null) {
-    path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.18")
+    path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.18/")
   }
   else {
   }
