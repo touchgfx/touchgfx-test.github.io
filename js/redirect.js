@@ -11,9 +11,9 @@ if (window && window.location) {
   else {
   }
 
-  if(path.endsWith('/') && path !== '/') {
-    path = path.substr(0, path.length - 1)
-  }
+  // if(path.endsWith('/') && path !== '/') {
+  //   path = path.substr(0, path.length - 1)
+  // }
   console.log(path)
   console.log(window.location.hash)
 
