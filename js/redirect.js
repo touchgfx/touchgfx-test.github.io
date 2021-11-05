@@ -9,6 +9,7 @@ if (window && window.location) {
     path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.18")
   }
   else {
+    console.log("no match")
   }
 
   if(!path.endsWith('/') && path !== '/') {
