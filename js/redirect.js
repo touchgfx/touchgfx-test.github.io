@@ -12,9 +12,10 @@ if (window && window.location) {
     console.log("match")
   }
 
-  if(!path.endsWith('/') && path !== '/') {
-    path = path + "/"
-  }
+  // if(!path.endsWith('/') && path !== '/') {
+  //   path = path + "/"
+  // }
+  path = path + "/"
   console.log(path)
   console.log(window.location.hash)
 
