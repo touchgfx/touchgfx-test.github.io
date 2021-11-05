@@ -6,14 +6,14 @@ if (window && window.location) {
   console.log(path)
   console.log(match)
   if (match == null) {
-    path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.18/")
+    path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.18")
   }
   else {
   }
 
-  // if(path.endsWith('/') && path !== '/') {
-  //   path = path.substr(0, path.length - 1)
-  // }
+  if(!path.endsWith('/') && path !== '/') {
+    path = path + "/"
+  }
   console.log(path)
   console.log(window.location.hash)
 
