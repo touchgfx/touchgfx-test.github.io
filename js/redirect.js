@@ -18,5 +18,6 @@ if (window && window.location) {
   console.log(path)
   console.log(window.location.hash)
 
-  window.history.replaceState('', '', path + window.location.hash)
+  // window.history.replaceState('', '', path + window.location.hash)
+  window.location.replace(path + window.location.hash)
 }
