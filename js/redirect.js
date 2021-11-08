@@ -1,23 +1,13 @@
 if (window && window.location) {
   let version_regex = /^\/touchgfx-test\.github\.io\/([0-9]*.[0-9]*)/
-  // && window.location.pathname.endsWith('/') && window.location.pathname !== '/'
   let path = window.location.pathname
   let match = path.match(version_regex)
-  // console.log(path)
-  // console.log(match)
   if (match == null) {
     path = path.replace("touchgfx-test.github.io", "touchgfx-test.github.io/4.18")
   }
-  else {
-    console.log("match")
-  }
 
   if(!path.endsWith('/') && path !== '/') {
-    path = path + "/"
+    path = path.substr(0, path.length - 1)
   }
-  console.log(path)
-  console.log(window.location.hash)
-
-  // window.history.replaceState('', '', path + window.location.hash)
   window.location.replace(path + window.location.hash)
 }
