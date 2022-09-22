@@ -1,0 +1,392 @@
+"use strict";
+(self["webpackChunktouchgfx_documentation"] = self["webpackChunktouchgfx_documentation"] || []).push([[4463],{
+
+/***/ 3905:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Zo": function() { return /* binding */ MDXProvider; },
+/* harmony export */   "kt": function() { return /* binding */ createElement; }
+/* harmony export */ });
+/* unused harmony exports MDXContext, useMDXComponents, withMDXComponents */
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+var isFunction = function isFunction(obj) {
+  return typeof obj === 'function';
+};
+
+var MDXContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({});
+var withMDXComponents = function withMDXComponents(Component) {
+  return function (props) {
+    var allComponents = useMDXComponents(props.components);
+    return /*#__PURE__*/React.createElement(Component, _extends({}, props, {
+      components: allComponents
+    }));
+  };
+};
+var useMDXComponents = function useMDXComponents(components) {
+  var contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext);
+  var allComponents = contextComponents;
+
+  if (components) {
+    allComponents = isFunction(components) ? components(contextComponents) : _objectSpread2(_objectSpread2({}, contextComponents), components);
+  }
+
+  return allComponents;
+};
+var MDXProvider = function MDXProvider(props) {
+  var allComponents = useMDXComponents(props.components);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(MDXContext.Provider, {
+    value: allComponents
+  }, props.children);
+};
+
+var TYPE_PROP_NAME = 'mdxType';
+var DEFAULTS = {
+  inlineCode: 'code',
+  wrapper: function wrapper(_ref) {
+    var children = _ref.children;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {}, children);
+  }
+};
+var MDXCreateElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+  var propComponents = props.components,
+      mdxType = props.mdxType,
+      originalType = props.originalType,
+      parentName = props.parentName,
+      etc = _objectWithoutProperties(props, ["components", "mdxType", "originalType", "parentName"]);
+
+  var components = useMDXComponents(propComponents);
+  var type = mdxType;
+  var Component = components["".concat(parentName, ".").concat(type)] || components[type] || DEFAULTS[type] || originalType;
+
+  if (propComponents) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _objectSpread2(_objectSpread2({
+      ref: ref
+    }, etc), {}, {
+      components: propComponents
+    }));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _objectSpread2({
+    ref: ref
+  }, etc));
+});
+MDXCreateElement.displayName = 'MDXCreateElement';
+function createElement (type, props) {
+  var args = arguments;
+  var mdxType = props && props.mdxType;
+
+  if (typeof type === 'string' || mdxType) {
+    var argsLength = args.length;
+    var createElementArgArray = new Array(argsLength);
+    createElementArgArray[0] = MDXCreateElement;
+    var newProps = {};
+
+    for (var key in props) {
+      if (hasOwnProperty.call(props, key)) {
+        newProps[key] = props[key];
+      }
+    }
+
+    newProps.originalType = type;
+    newProps[TYPE_PROP_NAME] = typeof type === 'string' ? type : mdxType;
+    createElementArgArray[1] = newProps;
+
+    for (var i = 2; i < argsLength; i++) {
+      createElementArgArray[i] = args[i];
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(null, createElementArgArray);
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(null, args);
+}
+
+
+
+
+/***/ }),
+
+/***/ 44035:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25026);
+
+
+function Figure(props) {
+  const noShadow = props.noShadow || false;
+  const width = props.width;
+  const height = props.height;
+  const imgSrc = (0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(props.imageSource);
+  if (noShadow) {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "figure noshadow"
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      href: imgSrc,
+      target: "_blank"
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      width,
+      height,
+      src: imgSrc
+    })), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.children));
+  }
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "figure"
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: imgSrc,
+    target: "_blank"
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    width,
+    height,
+    src: imgSrc
+  })), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.children));
+}
+/* harmony default export */ __webpack_exports__["Z"] = (Figure);
+
+
+/***/ }),
+
+/***/ 48693:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "assets": function() { return /* binding */ assets; },
+/* harmony export */   "contentTitle": function() { return /* binding */ contentTitle; },
+/* harmony export */   "default": function() { return /* binding */ MDXContent; },
+/* harmony export */   "frontMatter": function() { return /* binding */ frontMatter; },
+/* harmony export */   "metadata": function() { return /* binding */ metadata; },
+/* harmony export */   "toc": function() { return /* binding */ toc; }
+/* harmony export */ });
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3905);
+/* harmony import */ var _site_components_Figure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44035);
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+
+const frontMatter = {
+  id: "model-view-presenter-design-pattern",
+  title: "Model-View-Presenter\u8BBE\u8BA1\u6A21\u5F0F"
+};
+const contentTitle = void 0;
+const metadata = {
+  "unversionedId": "development/ui-development/software-architecture/model-view-presenter-design-pattern",
+  "id": "development/ui-development/software-architecture/model-view-presenter-design-pattern",
+  "title": "Model-View-Presenter\u8BBE\u8BA1\u6A21\u5F0F",
+  "description": "",
+  "source": "@site/i18n/zh-CN/docusaurus-plugin-content-docs/current/development/ui-development/software-architecture/model-view-presenter-design-pattern.mdx",
+  "sourceDirName": "development/ui-development/software-architecture",
+  "slug": "/development/ui-development/software-architecture/model-view-presenter-design-pattern",
+  "permalink": "/4.20/zh-CN/docs/development/ui-development/software-architecture/model-view-presenter-design-pattern",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "model-view-presenter-design-pattern",
+    "title": "Model-View-Presenter\u8BBE\u8BA1\u6A21\u5F0F"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "Software Architecture",
+    "permalink": "/4.20/zh-CN/docs/category/software-architecture"
+  },
+  "next": {
+    "title": "\u5C4F\u5E55\u6982\u5FF5",
+    "permalink": "/4.20/zh-CN/docs/development/ui-development/software-architecture/screen-definition-and-mvp"
+  }
+};
+const assets = {};
+
+const toc = [];
+const layoutProps = {
+  toc
+};
+const MDXLayout = "wrapper";
+function MDXContent(_a) {
+  var _b = _a, {
+    components
+  } = _b, props = __objRest(_b, [
+    "components"
+  ]);
+  return /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(MDXLayout, __spreadProps(__spreadValues(__spreadValues({}, layoutProps), props), {
+    components,
+    mdxType: "MDXLayout"
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `TouchGFX\u7528\u6237\u63A5\u53E3\u9075\u5FAAModel-View-Presenter\uFF08MVP\uFF09\u67B6\u6784\u6A21\u5F0F\uFF0C\u5B83\u662FModel-View-Controller\uFF08MVC\uFF09\u6A21\u5F0F\u7684\u6D3E\u751F\u6A21\u5F0F\u3002 \u4E24\u8005\u90FD\u5E7F\u6CDB\u7528\u4E8E\u6784\u5EFA\u7528\u6237\u63A5\u53E3\u5E94\u7528\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `MVP\u6A21\u5F0F\u7684\u4E3B\u8981\u4F18\u52BF\u662F\uFF1A`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("ul", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("li", {
+    parentName: "ul"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "li"
+  }, `\u5173\u6CE8\u70B9\u5206\u79BB`), `\uFF1A\u5C06\u4EE3\u7801\u5206\u6210\u4E0D\u540C\u7684\u90E8\u5206\u63D0\u4F9B\uFF0C\u6BCF\u90E8\u5206\u6709\u81EA\u5DF1\u7684\u4EFB\u52A1\u3002 \u8FD9\u4F7F\u5F97\u4EE3\u7801\u66F4\u7B80\u5355\u3001\u53EF\u91CD\u590D\u4F7F\u7528\u6027\u66F4\u9AD8\u4E14\u66F4\u6613\u4E8E\u7EF4\u62A4\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("li", {
+    parentName: "ul"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "li"
+  }, `\u5355\u5143\u6D4B\u8BD5`), `\uFF1A\u7531\u4E8EUI\u7684\u903B\u8F91\uFF08Presenter\uFF09\u72EC\u7ACB\u4E8E\u89C6\u56FE\uFF08View\uFF09\uFF0C\u56E0\u6B64\uFF0C\u5355\u72EC\u6D4B\u8BD5\u8FD9\u4E9B\u90E8\u5206\u4F1A\u5BB9\u6613\u5F88\u591A\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `MVP\u4E2D\u5B9A\u4E49\u4E86\u4E0B\u5217\u4E09\u4E2A\u7C7B\uFF1A`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("ul", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("li", {
+    parentName: "ul"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "li"
+  }, `Model`), `\u662F\u4E00\u79CD\u63A5\u53E3\uFF0C\u7528\u4E8E\u5B9A\u4E49\u8981\u5728\u7528\u6237\u754C\u9762\u4E0A\u663E\u793A\u6216\u6709\u5176\u4ED6\u5F62\u5F0F\u64CD\u4F5C\u7684\u6570\u636E\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("li", {
+    parentName: "ul"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "li"
+  }, `View`), `\u662F\u4E00\u79CD\u88AB\u52A8\u63A5\u53E3\uFF0C\u7528\u4E8E\u663E\u793A\u6570\u636E\uFF08\u6765\u81EAModel\uFF09\uFF0C\u5E76\u5C06\u7528\u6237\u6307\u4EE4\uFF08\u4E8B\u4EF6\uFF09\u4F20\u7ED9Presenter\u4EE5\u4FBF\u6839\u636E\u8BE5\u6570\u636E\u8FDB\u884C\u64CD\u4F5C\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("li", {
+    parentName: "ul"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "li"
+  }, `Presenter`), `\u7684\u64CD\u4F5C\u53D6\u51B3\u4E8EModel\u548CView\u3002 \u5B83\u4ECE\u5B58\u50A8\u5E93\uFF08Model\uFF09\u68C0\u7D22\u6570\u636E\uFF0C\u5E76\u5C06\u5176\u683C\u5F0F\u5316\u4EE5\u4FBF\u5728\u89C6\u56FE\u4E2D\u663E\u793A\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/basic-concepts/software-architecture-mvp/mvp.png",
+    noShadow: true,
+    mdxType: "Figure"
+  }, "Model-View-Presenter\u8BBE\u8BA1\u6A21\u5F0F"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5728TouchGFX\u4E2D\uFF0C\u4ECEModel\u7C7B\u6267\u884C\u4E0E\u5E94\u7528\u975EUI\u90E8\u5206\uFF08\u8FD9\u91CC\u79F0\u4E3A\u540E\u7AEF\u7CFB\u7EDF\uFF09\u7684\u901A\u4FE1\u3002 \u540E\u7AEF\u7CFB\u7EDF\u662F\u4ECEUI\u63A5\u6536\u4E8B\u4EF6\u548C\u5C06\u4E8B\u4EF6\u8F93\u5165UI\u7684\u8F6F\u4EF6\u7EC4\u4EF6\uFF0C\u4F8B\u5982\u91C7\u96C6\u4F20\u611F\u5668\u7684\u65B0\u6D4B\u91CF\u503C\u3002 \u540E\u7AEF\u7CFB\u7EDF\u53EF\u4F5C\u4E3A\u5355\u72EC\u7684\u4EFB\u52A1\u5728\u540C\u4E00MCU\u3001\u5355\u72EC\u7684\u5904\u7406\u5668\u3001\u4E91\u6A21\u5757\u6216\u5176\u4ED6\u786C\u4EF6\u4E0A\u8FD0\u884C\u3002 \u4ECETouchGFX\u7684\u89D2\u5EA6\u6765\u770B\uFF0C\u8FD9\u5E76\u4E0D\u5341\u5206\u91CD\u8981\uFF0C\u53EA\u8981\u5B83\u662F\u80FD\u591F\u4E0E\u4E4B\u901A\u4FE1\u7684\u7EC4\u4EF6\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u4F7F\u7528\u7684\u7279\u5B9A\u901A\u4FE1\u534F\u8BAE\u4E0D\u53D7TouchGFX\u7BA1\u7406\u3002 \u5B83\u53EA\u63D0\u4F9B\u4E00\u4E2A\u5728\u6BCF\u4E2ATouchGFX\u5600\u55D2\u65F6\u95F4\u8C03\u7528\u4E00\u6B21\u7684\u51FD\u6570\uFF0C\u53EF\u4EE5\u5728\u5176\u4E2D\u5904\u7406\u9700\u8981\u7684\u901A\u4FE1\u3002 \u5728`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("a", __spreadValues({
+    parentName: "p"
+  }, {
+    "href": "../touchgfx-engine-features/backend-communication"
+  }), `\u540E\u7AEF\u901A\u4FE1`), ` \u4E86\u89E3\u6709\u5173\u8BE5\u4E3B\u9898\u7684\u66F4\u591A\u4FE1\u606F\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/basic-concepts/software-architecture-mvp/mvp-2.png",
+    noShadow: true,
+    mdxType: "Figure"
+  }, "Model-View-Presenter\u548C\u5916\u90E8\u901A\u4FE1"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5173\u4E8E\u5982\u4F55\u5728TouchGFX UI\u5F00\u53D1\u4E2D\u5B9E\u73B0\u548C\u4F7F\u7528MVP\u7684\u66F4\u591A\u5177\u4F53\u7EC6\u8282\uFF0C\u8BF7\u53C2\u89C1`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("a", __spreadValues({
+    parentName: "p"
+  }, {
+    "href": "code-structure"
+  }), `\u4EE3\u7801\u7ED3\u6784`), `\u4E00\u8282\u3002`));
+}
+;
+MDXContent.isMDXComponent = true;
+
+
+/***/ })
+
+}]);

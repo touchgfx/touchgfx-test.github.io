@@ -1,0 +1,971 @@
+"use strict";
+(self["webpackChunktouchgfx_documentation"] = self["webpackChunktouchgfx_documentation"] || []).push([[1251],{
+
+/***/ 3905:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Zo": function() { return /* binding */ MDXProvider; },
+/* harmony export */   "kt": function() { return /* binding */ createElement; }
+/* harmony export */ });
+/* unused harmony exports MDXContext, useMDXComponents, withMDXComponents */
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+var isFunction = function isFunction(obj) {
+  return typeof obj === 'function';
+};
+
+var MDXContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({});
+var withMDXComponents = function withMDXComponents(Component) {
+  return function (props) {
+    var allComponents = useMDXComponents(props.components);
+    return /*#__PURE__*/React.createElement(Component, _extends({}, props, {
+      components: allComponents
+    }));
+  };
+};
+var useMDXComponents = function useMDXComponents(components) {
+  var contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext);
+  var allComponents = contextComponents;
+
+  if (components) {
+    allComponents = isFunction(components) ? components(contextComponents) : _objectSpread2(_objectSpread2({}, contextComponents), components);
+  }
+
+  return allComponents;
+};
+var MDXProvider = function MDXProvider(props) {
+  var allComponents = useMDXComponents(props.components);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(MDXContext.Provider, {
+    value: allComponents
+  }, props.children);
+};
+
+var TYPE_PROP_NAME = 'mdxType';
+var DEFAULTS = {
+  inlineCode: 'code',
+  wrapper: function wrapper(_ref) {
+    var children = _ref.children;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {}, children);
+  }
+};
+var MDXCreateElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+  var propComponents = props.components,
+      mdxType = props.mdxType,
+      originalType = props.originalType,
+      parentName = props.parentName,
+      etc = _objectWithoutProperties(props, ["components", "mdxType", "originalType", "parentName"]);
+
+  var components = useMDXComponents(propComponents);
+  var type = mdxType;
+  var Component = components["".concat(parentName, ".").concat(type)] || components[type] || DEFAULTS[type] || originalType;
+
+  if (propComponents) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _objectSpread2(_objectSpread2({
+      ref: ref
+    }, etc), {}, {
+      components: propComponents
+    }));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _objectSpread2({
+    ref: ref
+  }, etc));
+});
+MDXCreateElement.displayName = 'MDXCreateElement';
+function createElement (type, props) {
+  var args = arguments;
+  var mdxType = props && props.mdxType;
+
+  if (typeof type === 'string' || mdxType) {
+    var argsLength = args.length;
+    var createElementArgArray = new Array(argsLength);
+    createElementArgArray[0] = MDXCreateElement;
+    var newProps = {};
+
+    for (var key in props) {
+      if (hasOwnProperty.call(props, key)) {
+        newProps[key] = props[key];
+      }
+    }
+
+    newProps.originalType = type;
+    newProps[TYPE_PROP_NAME] = typeof type === 'string' ? type : mdxType;
+    createElementArgArray[1] = newProps;
+
+    for (var i = 2; i < argsLength; i++) {
+      createElementArgArray[i] = args[i];
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(null, createElementArgArray);
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement.apply(null, args);
+}
+
+
+
+
+/***/ }),
+
+/***/ 22425:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+
+class CodeHeader extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  render() {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "code-header"
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", null, this.props.children)));
+  }
+}
+/* harmony default export */ __webpack_exports__["Z"] = (CodeHeader);
+
+
+/***/ }),
+
+/***/ 44035:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25026);
+
+
+function Figure(props) {
+  const noShadow = props.noShadow || false;
+  const width = props.width;
+  const height = props.height;
+  const imgSrc = (0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(props.imageSource);
+  if (noShadow) {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "figure noshadow"
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      href: imgSrc,
+      target: "_blank"
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      width,
+      height,
+      src: imgSrc
+    })), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.children));
+  }
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "figure"
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: imgSrc,
+    target: "_blank"
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    width,
+    height,
+    src: imgSrc
+  })), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, props.children));
+}
+/* harmony default export */ __webpack_exports__["Z"] = (Figure);
+
+
+/***/ }),
+
+/***/ 29415:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _Highlight__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(88678);
+
+
+const icon = /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "14",
+  height: "16",
+  viewBox: "0 0 14 16"
+}, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  fillRule: "evenodd",
+  d: "M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"
+}));
+class FurtherReading extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  render() {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Highlight__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+      color: "var(--highlight-color-further-reading)",
+      header: "Further reading",
+      type: "further-reading",
+      icon
+    }, this.props.children);
+  }
+}
+/* harmony default export */ __webpack_exports__["Z"] = (FurtherReading);
+
+
+/***/ }),
+
+/***/ 88678:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+
+class Highlight extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  render() {
+    const className = `highlight highlight-${this.props.type}`;
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "highlight-heading"
+    }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", null, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "highlight-icon"
+    }, this.props.icon), this.props.header)), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "highlight-content"
+    }, this.props.children));
+  }
+}
+/* harmony default export */ __webpack_exports__["Z"] = (Highlight);
+
+
+/***/ }),
+
+/***/ 31217:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+
+class InlineCode extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  render() {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("code", null, this.props.children);
+  }
+}
+/* harmony default export */ __webpack_exports__["Z"] = (InlineCode);
+
+
+/***/ }),
+
+/***/ 37793:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67294);
+/* harmony import */ var _Highlight__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(88678);
+
+
+const icon = /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "12",
+  height: "16",
+  viewBox: "0 0 12 16"
+}, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+  fillRule: "evenodd",
+  d: "M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"
+}));
+class Tip extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
+  render() {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Highlight__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+      color: "var(--highlight-color-tip)",
+      header: "Tip",
+      type: "tip",
+      icon
+    }, this.props.children);
+  }
+}
+/* harmony default export */ __webpack_exports__["Z"] = (Tip);
+
+
+/***/ }),
+
+/***/ 47484:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "assets": function() { return /* binding */ assets; },
+/* harmony export */   "contentTitle": function() { return /* binding */ contentTitle; },
+/* harmony export */   "default": function() { return /* binding */ MDXContent; },
+/* harmony export */   "frontMatter": function() { return /* binding */ frontMatter; },
+/* harmony export */   "metadata": function() { return /* binding */ metadata; },
+/* harmony export */   "toc": function() { return /* binding */ toc; }
+/* harmony export */ });
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3905);
+/* harmony import */ var _site_components_Figure__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44035);
+/* harmony import */ var _site_components_FurtherReading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29415);
+/* harmony import */ var _site_components_Tip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37793);
+/* harmony import */ var _site_components_InlineCode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(31217);
+/* harmony import */ var _docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39130);
+/* harmony import */ var _site_components_CodeHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(22425);
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+
+const frontMatter = {
+  id: "analog-clock",
+  title: "\u985E\u6BD4\u6642\u9418"
+};
+const contentTitle = void 0;
+const metadata = {
+  "unversionedId": "development/ui-development/ui-components/miscellaneous/analog-clock",
+  "id": "development/ui-development/ui-components/miscellaneous/analog-clock",
+  "title": "\u985E\u6BD4\u6642\u9418",
+  "description": "",
+  "source": "@site/i18n/zh-TW/docusaurus-plugin-content-docs/current/development/ui-development/ui-components/miscellaneous/analog-clock.mdx",
+  "sourceDirName": "development/ui-development/ui-components/miscellaneous",
+  "slug": "/development/ui-development/ui-components/miscellaneous/analog-clock",
+  "permalink": "/4.20/zh-TW/docs/development/ui-development/ui-components/miscellaneous/analog-clock",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "analog-clock",
+    "title": "\u985E\u6BD4\u6642\u9418"
+  },
+  "sidebar": "docs",
+  "previous": {
+    "title": "\u6587\u5B57\u5340\u57DF",
+    "permalink": "/4.20/zh-TW/docs/development/ui-development/ui-components/miscellaneous/text-area"
+  },
+  "next": {
+    "title": "\u6578\u4F4D\u6642\u9418",
+    "permalink": "/4.20/zh-TW/docs/development/ui-development/ui-components/miscellaneous/digital-clock"
+  }
+};
+const assets = {};
+
+
+
+
+
+
+const toc = [{
+  value: "\u5C0F\u90E8\u4EF6\u7D44",
+  id: "widget-group",
+  level: 2
+}, {
+  value: "\u5C6C\u6027",
+  id: "properties",
+  level: 2
+}, {
+  value: "Time",
+  id: "time",
+  level: 3
+}, {
+  value: "Clock Hands",
+  id: "clock-hands",
+  level: 3
+}, {
+  value: "\u6642\u91DD\u3001\u5206\u91DD\u548C\u79D2\u91DD",
+  id: "hour-minute-and-second-hands",
+  level: 4
+}, {
+  value: "\u52D5\u756B",
+  id: "animation",
+  level: 3
+}, {
+  value: "\u4EA4\u4E92",
+  id: "interactions",
+  level: 2
+}, {
+  value: "\u52D5\u4F5C",
+  id: "actions",
+  level: 3
+}, {
+  value: "\u89F8\u767C\u689D\u4EF6",
+  id: "triggers",
+  level: 3
+}, {
+  value: "\u6027\u80FD",
+  id: "performance",
+  level: 2
+}, {
+  value: "\u7BC4\u4F8B",
+  id: "examples",
+  level: 2
+}, {
+  value: "\u751F\u6210\u7A0B\u5F0F\u78BC",
+  id: "generated-code",
+  level: 3
+}, {
+  value: "\u7528\u6236\u7A0B\u5F0F\u78BC",
+  id: "user-code",
+  level: 3
+}, {
+  value: "TouchGFX Designer\u7BC4\u4F8B",
+  id: "touchgfx-designer-examples",
+  level: 3
+}, {
+  value: "API\u53C3\u8003",
+  id: "api-reference",
+  level: 2
+}];
+const layoutProps = {
+  toc
+};
+const MDXLayout = "wrapper";
+function MDXContent(_a) {
+  var _b = _a, {
+    components
+  } = _b, props = __objRest(_b, [
+    "components"
+  ]);
+  return /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(MDXLayout, __spreadProps(__spreadValues(__spreadValues({}, layoutProps), props), {
+    components,
+    mdxType: "MDXLayout"
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u985E\u6BD4\u6642\u9418(Analog Clock)\u662F\u4E00\u500B\u5C0F\u90E8\u4EF6\uFF0C\u80FD\u5920\u986F\u793A\u4E00\u500B\u5178\u578B\u7684\u6307\u6A19\u5F0F\u96FB\u5B50\u9336\uFF0C\u800C\u4E0D\u662F\u901A\u904E\u6587\u5B57\u986F\u793A\u6642\u9593\u7684`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("a", __spreadValues({
+    parentName: "p"
+  }, {
+    "href": "digital-clock"
+  }), `\u6578\u4F4D\u6642\u9418`), `\u3002 \u8A72\u6642\u9418\u4F7F\u7528\u80CC\u666F\u5716\u50CF\u4F5C\u70BA\u9418\u9762\u3002 \u6642\u91DD\u3001\u5206\u91DD\u548C\u79D2\u91DD\u90FD\u4F7F\u7528\u4E00\u5E45\u5716\u50CF\uFF0C\u4E26\u570D\u7E5E\u4E00\u500B\u53EF\u914D\u7F6E\u7684\u4E2D\u5FC3\u65CB\u8F49\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-components/analog-clock/widget-appearance.gif",
+    mdxType: "Figure"
+  }, "\u6A21\u64EC\u5668\u4E2D\u904B\u884C\u7684\u985E\u6BD4\u6642\u9418\uFF08\u52A0\u901F\u93E1\u982D\uFF09"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h2", __spreadValues({}, {
+    "id": "widget-group"
+  }), `\u5C0F\u90E8\u4EF6\u7D44`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u985E\u6BD4\u6642\u9418\u4F4D\u65BCTouchGFX Designer\u4E2D\u7684Miscellaneous\u5C0F\u90E8\u4EF6\u7D44\u4E2D\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-components/analog-clock/widget-group-v4.17.png",
+    mdxType: "Figure"
+  }, "TouchGFX Designer\u4E2D\u7684\u985E\u6BD4\u6642\u9418"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h2", __spreadValues({}, {
+    "id": "properties"
+  }), `\u5C6C\u6027`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `TouchGFX Designer\u4E2D\u985E\u6BD4\u6642\u9418\u7684\u5C6C\u6027\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("table", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("thead", {
+    parentName: "table"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "thead"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("th", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "th"
+  }, `\u5C6C\u6027\u7D44`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("th", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "th"
+  }, `\u5C6C\u6027\u8AAA\u660E`)))), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tbody", {
+    parentName: "table"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Name`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `\u5C0F\u90E8\u4EF6\u7684`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u540D\u7A31`), `\u3002 `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `Name\u662FTouchGFX Designer\u548C\u7A0B\u5F0F\u78BC\u4E2D\u4F7F\u7528\u7684\u552F\u4E00\u8B58\u5225\u78BC`), `\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Location`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `X`), ` \u548C`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `Y`), ` \u6307\u5B9A\u5C0F\u90E8\u4EF6\u5DE6\u4E0A\u89D2\u76F8\u5C0D\u4E8E\u5176\u7236\u7684\u4F4D\u7F6E\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `W`), ` \u548C `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `H`), ` \u6307\u5B9A\u5C0F\u90E8\u4EF6\u7684\u5BEC\u5EA6\u548C\u9AD8\u5EA6\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u985E\u6BD4\u6642\u9418\u7684\u5927\u5C0F\u662F\u5F9E\u95DC\u806F\u5716\u50CF\u7684\u5927\u5C0F\u7372\u53D6\u7684\uFF0C\u5176\u5927\u5C0F\u7121\u6CD5\u66F4\u6539\uFF08\u9664\u975E\u66F4\u6539\u5716\u50CF\uFF09\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u9396\u5B9A`), `\u6307\u5B9A\u5C0F\u90E8\u4EF6\u662F\u5426\u61C9\u9396\u5B9A\u70BA\u5176\u7576\u524D\u7684X\u3001Y\u3001W\u548CH\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u5982\u679C\u9396\u5B9A\u5C0F\u90E8\u4EF6\uFF0C\u9084\u6703\u7981\u6B62\u901A\u904E\u87A2\u5E55\u8207\u5C0F\u90E8\u4EF6\u9032\u884C\u4EA4\u4E92\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u53EF\u898B`), ` \u6307\u5B9A\u5C0F\u90E8\u4EF6\u7684\u53EF\u898B\u6027\u3002 `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u4F7F\u5C0F\u90E8\u4EF6\u4E0D\u53EF\u898B\u9084\u5C07\u7981\u7528\u8207\u5C0F\u90E8\u4EF6\u4E4B\u9593\u901A\u904E\u87A2\u5E55\u9032\u884C\u7684\u4EA4\u4E92\u3002`))), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Style`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u6A23\u5F0F`), ` \u6307\u5B9A\u5C0F\u90E8\u4EF6\u7684\u9810\u5B9A\u7FA9\u8A2D\u7F6E\uFF0C\u7528\u65BC\u5C07\u6240\u9078\u5C6C\u6027\u8A2D\u70BA\u9810\u5B9A\u7FA9\u7684\u503C\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u9019\u4E9B\u6A23\u5F0F\u5305\u542B\u53EF\u514D\u8CBB\u4F7F\u7528\u7684\u5716\u50CF`), `\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Appearance`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u5716\u50CF`), ` \u6307\u5B9A\u7528\u4F5C\u80CC\u666F\u7684\u5716\u50CF\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `X\u8EF8\u65CB\u8F49\u4E2D\u5FC3`), ` \u548C `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `Y\u8EF8\u65CB\u8F49\u4E2D\u5FC3`), ` \u6307\u5B9A\u6642\u9418\u6307\u6A19\u61C9\u8A72\u7E5E\u8457\u65CB\u8F49\u7684\u9EDE`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Time`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u4F7F\u7528Am/Pm`), `\u6307\u5B9A\u6642\u9593\u683C\u5F0F\u662F12\u5C0F\u6642\u5236\u9084\u662F24\u5C0F\u6642\u5236\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u521D\u59CB\u6642\u9593`), `\u6307\u5B9A\u6642\u9418\u986F\u793A\u7684\u521D\u59CB\u6642\u9593\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Clock Hands`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u6642\u9418\u6307\u6A19`), ` \u6307\u5B9A\u985E\u6BD4\u6642\u9418\u61C9\u8A72\u986F\u793A\u54EA\u500B\u6642\u9418\u6307\u6A19`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\uFF08\u79D2\u91DD\u3001\u5206\u91DD\u548C\u6642\u91DD\uFF09\u3001 `), ` \u4EE5\u53CA\u6307\u6A19\u7684\u9806\u5E8F\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), `\u6BCF\u6839\u6642\u9418\u6307\u6A19\u90FD\u53EF\u4EE5\u901A\u904E\u8A2D\u7F6E`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u65CB\u8F49\u4F4D\u7F6EX`), `\u548C`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u65CB\u8F49\u4F4D\u7F6EY`), `\u4F86\u8A2D\u7F6E\u4E00\u500B`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u6307\u6A19\u5716\u50CF`), `\u548C\u5404\u81EA\u7684\u65CB\u8F49\u9EDE\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), `\u5206\u91DD\u548C\u6642\u91DD\u90FD\u53EF\u9078\u64C7\u4F7F\u7528\u6383\u63CF\u5F0F\u6307\u6A19\u52D5\u4F5C\uFF0C\u65B9\u6CD5\u662F\u8A2D\u7F6E`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u6383\u63CF\u5F0F\u52D5\u4F5C`))), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Animations`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u52D5\u756B\u5F0F\u6642\u9418\u6307\u6A19\u52D5\u4F5C`), `\u6307\u5B9A\u662F\u5426\u555F\u7528\u6642\u9418\u6307\u6A19\u7684\u52D5\u756B\u6548\u679C\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u6301\u7E8C\u6642\u9593`), `\u6307\u5B9A\u52D5\u756B\u6548\u679C\u7684\u6301\u7E8C\u6642\u9593\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u7DE9\u52D5`), ` \u548C `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u7DE9\u52D5\u9078\u9805`), ` \u6307\u5B9A\u4F7F\u7528\u7684\u7DE9\u52D5\u65B9\u7A0B\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Mixin`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `\u53EF\u62D6\u52D5`), ` \u6307\u5B9A\u5728\u904B\u884C\u6642\u5C0F\u90E8\u4EF6\u662F\u5426\u53EF\u62D6\u52D5\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `ClickListener`), ` \u6307\u5B9A\u5C0F\u90E8\u4EF6\u88AB\u9EDE\u64CA\u6642\u662F\u5426\u6703\u547C\u53EBcallback\u51FD\u6578\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `MoveAnimator`), ` \u6307\u5B9A\u5C0F\u90E8\u4EF6\u662F\u5426\u53EF\u7E6A\u88FD `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `X`), ` \u548C `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "td"
+  }, `Y`), ` \u503C\u8B8A\u5316\u7684\u52D5\u756B\u3002`)))), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "time"
+  }), `Time`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u201CTime\u201D\u5C6C\u6027\u7D44\u5141\u8A31\u4F7F\u7528\u8005\u8A2D\u7F6E\u6642\u9418\u5C0F\u90E8\u4EF6\u7684\u521D\u59CB\u6642\u9593\uFF0C\u4EE5\u53CA\u662F\u5426\u4F7F\u7528Am/Pm\u6A19\u6E96\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u9078\u64C7Am/Pm\u9084\u6703\u5C0E\u81F4\u7A0B\u5F0F\u78BC\u751F\u6210\u7684\u7D30\u5FAE\u8B8A\u5316\u3002 \u800C\u4E0D\u662F\u5728\u985E\u6BD4\u6642\u9418\u4E2D\u4F7F\u7528\u4E0B\u9762\u7684\u51FD\u6578\u521D\u59CB\u5316\u6642\u9593\uFF1A`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), ` `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("inlineCode", {
+    parentName: "p"
+  }, `initializeTime24Hour(uint8_t hour, uint8_t minute, uint8_t second)`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5982\u679C\u63A1\u752812\u5C0F\u6642\u6A19\u8A18\u6CD5\uFF0C\u5C07\u4F7F\u7528\u4EE5\u4E0B\u51FD\u6578\uFF1A`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), ` `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("inlineCode", {
+    parentName: "p"
+  }, `initializeTime12Hour(uint8_t hour, uint8_t minute, uint8_t second, bool am)`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5982\u8981\u66F4\u65B0\u6642\u9418\u986F\u793A\u7684\u6642\u9593\uFF0C\u53EF\u4EE5\u4F7F\u7528\u4EE5\u4E0B\u51FD\u6578\u4E4B\u4E00\u3002`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), ` `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("inlineCode", {
+    parentName: "p"
+  }, `setTime24Hour(uint8_t hour, uint8_t minute, uint8_t second)`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("br", null), ` `, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("inlineCode", {
+    parentName: "p"
+  }, `setTime12Hour(uint8_t hour, uint8_t minute, uint8_t second, bool am)`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "clock-hands"
+  }), `Clock Hands`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5728\u201C\u6642\u9418\u6307\u91DD\u201D\u5C6C\u6027\u7D44\u4E2D\uFF0C\u4F7F\u7528\u8005\u53EF\u4EE5\u5B9A\u7FA9\u8981\u4F7F\u7528\u7684\u6307\u91DD\u53CA\u5404\u81EA\u7684Z\u8EF8\u9806\u5E8F\u3002 \u9996\u5148\u5B9A\u7FA9\u7684\u6307\u91DD\u5C07\u5448\u73FE\u5728\u5176\u4ED6\u6307\u91DD\u4E4B\u4E0A\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h4", __spreadValues({}, {
+    "id": "hour-minute-and-second-hands"
+  }), `\u6642\u91DD\u3001\u5206\u91DD\u548C\u79D2\u91DD`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u6BCF\u500B\u6307\u6A19\u90FD\u9700\u8981\u4E00\u5E45\u5716\u50CF\u548C\u4E00\u500B\u65CB\u8F49\u4F4D\u7F6E\u3002 \u65CB\u8F49\u4F4D\u7F6E\u6C7A\u5B9A\u5DF2\u5B9A\u7FA9\u7684\u6307\u6A19\u5716\u50CF\u61C9\u8A72\u570D\u7E5E\u8457\u9032\u884C\u81EA\u8EAB\u65CB\u8F49\u7684\u9EDE\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-components/analog-clock/analog-clock-hands-props-v4.17.png",
+    mdxType: "Figure"
+  }, "\u6642\u9418\u6307\u6A19\u5C6C\u6027"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u6642\u91DD\u548C\u5206\u91DD\u53EF\u4EE5\u4F7F\u7528\u201C`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "p"
+  }, `\u6383\u63CF\u5F0F\u52D5\u4F5C`), `\u201D\u3002 \u555F\u7528\u6B64\u9078\u9805\u5F8C\uFF0C\u6307\u6A19\u5C07\u4E0D\u518D\u5F9E\u4E00\u500B\u4F4D\u7F6E\u77AC\u9593\u8DF3\u5230\u53E6\u4E00\u500B\u4F4D\u7F6E\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-components/analog-clock/analog-clock-no-sweeping-movement.gif",
+    mdxType: "Figure"
+  }, "\u6383\u63CF\u5F0F\u52D5\u4F5C\u5DF2\u505C\u7528"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-components/analog-clock/analog-clock-with-sweeping-movement.gif",
+    mdxType: "Figure"
+  }, "\u6383\u63CF\u5F0F\u52D5\u4F5C\u5DF2\u555F\u7528"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "animation"
+  }), `\u52D5\u756B`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u52D5\u756B\u90E8\u5206\u5141\u8A31\u4F7F\u7528\u8005\u5B9A\u7FA9\u66F4\u9032\u968E\u7684\u6307\u91DD\u904B\u52D5\u3002 \u7136\u800C\uFF0C\u5982\u679C\u6642\u91DD\u548C\u5206\u91DD\u5DF2\u7D93\u555F\u7528\u4E86`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("em", {
+    parentName: "p"
+  }, `\u201C\u6383\u63CF\u5F0F\u52D5\u4F5C\u201D`), `\uFF0C\u5B83\u5011\u5C07\u6C92\u6709\u52D5\u756B\u6548\u679C\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5728\u4E0B\u9762\u7684\u4F8B\u5B50\u4E2D\uFF0C\u52D5\u756B\u6301\u7E8C\u6642\u9593\u8A2D\u7F6E\u70BA\u201C30\u201D\uFF0C\u7DE9\u52D5\u8A2D\u7F6E\u70BA\u201CBounce\u201D\uFF0C\u4E26\u5C07\u201COut\u201D\u4F5C\u70BA\u5176\u7DE9\u52D5\u9078\u9805\uFF1A`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-components/analog-clock/analog-clock-animation.gif",
+    mdxType: "Figure"
+  }, "\u6642\u9418\u52D5\u756B\u7BC4\u4F8B"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h2", __spreadValues({}, {
+    "id": "interactions"
+  }), `\u4EA4\u4E92`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u4E0B\u9762\u7684\u90E8\u5206\u4ECB\u7D39\u4E86\u985E\u6BD4\u6642\u9418\u652F\u63F4\u7684\u64CD\u4F5C\u548C\u89F8\u767C\u689D\u4EF6\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "actions"
+  }), `\u52D5\u4F5C`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("table", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("thead", {
+    parentName: "table"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "thead"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("th", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "th"
+  }, `\u6A19\u6E96\u5C0F\u90E8\u4EF6\u64CD\u4F5C`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("th", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "th"
+  }, `\u8AAA\u660E`)))), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tbody", {
+    parentName: "table"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Move widget`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `\u96A8\u6642\u9593\u7684\u63A8\u79FB\u5C07\u5C0F\u90E8\u4EF6\u79FB\u52D5\u5230\u65B0\u4F4D\u7F6E\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Hide widget`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `\u96B1\u85CF\u5C0F\u90E8\u4EF6\uFF08\u5C07\u53EF\u898B\u6027\u8A2D\u7F6E\u70BAfalse\uFF09\u3002`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("tr", {
+    parentName: "tbody"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("strong", {
+    parentName: "td"
+  }, `Show widget`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("td", __spreadValues({
+    parentName: "tr"
+  }, {
+    "align": null
+  }), `\u4F7F\u96B1\u85CF\u7684\u5C0F\u90E8\u4EF6\u53EF\u898B\uFF08\u5C07\u53EF\u898B\u6027\u8A2D\u7F6E\u70BAtrue\uFF09\u3002`)))), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "triggers"
+  }), `\u89F8\u767C\u689D\u4EF6`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u985E\u6BD4\u6642\u9418\u4E0D\u6703\u7522\u751F\u4EFB\u4F55\u89F8\u767C\u689D\u4EF6\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h2", __spreadValues({}, {
+    "id": "performance"
+  }), `\u6027\u80FD`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u985E\u6BD4\u6642\u9418\u5305\u62EC\u4E00\u5E45`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("a", __spreadValues({
+    parentName: "p"
+  }, {
+    "href": "../images/image"
+  }), `\u5716\u50CF`), `\u548C\u4E09\u500B`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("a", __spreadValues({
+    parentName: "p"
+  }, {
+    "href": "../images/texture-mapper"
+  }), `\u7D0B\u7406\u6620\u5C04\u5668`), `\uFF0C\u90FD\u662FMCU\u8CC7\u6E90\u5BC6\u96C6\u578B\u7D44\u4EF6\u3002 \u56E0\u6B64\uFF0C\u5728\u5927\u90E8\u5206\u5E73\u81FA\u4E0A\uFF0C\u6703\u5C07\u985E\u6BD4\u6642\u9418\u8996\u70BA\u8981\u6C42\u9AD8\u7684\u5C0F\u90E8\u4EF6\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u95DC\u65BC\u6587\u5B57\u7E6A\u88FD\u6027\u80FD\u7684\u66F4\u591A\u8CC7\u8A0A\uFF0C\u8ACB\u95B1\u8B80`, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("a", __spreadValues({
+    parentName: "p"
+  }, {
+    "href": "../general-ui-component-performance"
+  }), `\u901A\u7528UI\u5143\u4EF6\u6027\u80FD`), `\u4E00\u7BC0\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h2", __spreadValues({}, {
+    "id": "examples"
+  }), `\u7BC4\u4F8B`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "generated-code"
+  }), `\u751F\u6210\u7A0B\u5F0F\u78BC`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5728\u70BAView\u57FA\u985E\u751F\u6210\u7684\u7A0B\u5F0F\u78BC\u4E2D\uFF0C\u53EF\u4EE5\u770B\u5230TouchGFX Designer\u5982\u4F55\u8A2D\u7F6E\u6309\u9215\u3002`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_CodeHeader__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+    mdxType: "CodeHeader"
+  }, "mainViewBase.cpp"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("pre", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("code", __spreadValues({
+    parentName: "pre"
+  }, {
+    "className": "language-cpp"
+  }), `#include <gui_generated/main_screen/mainViewBase.hpp>
+#include "BitmapDatabase.hpp"
+
+mainViewBase::mainViewBase()
+{
+    analogClock.setXY(124, 15);
+    analogClock.setBackground(BITMAP_BLUE_CLOCKS_BACKGROUNDS_CLOCK_STANDARD_BACKGROUND_ID, 116, 116);
+    analogClock.setupMinuteHand(BITMAP_BLUE_CLOCKS_HANDS_CLOCK_STANDARD_MINUTE_HAND_ID, 7, 67);
+    analogClock.setMinuteHandSecondCorrection(false);
+    analogClock.setupHourHand(BITMAP_BLUE_CLOCKS_HANDS_CLOCK_STANDARD_HOUR_HAND_ID, 7, 52);
+    analogClock.setHourHandMinuteCorrection(false);
+    analogClock.setupSecondHand(BITMAP_BLUE_CLOCKS_HANDS_CLOCK_STANDARD_SECOND_HAND_ID, 3, 66);
+    analogClock.initializeTime24Hour(10, 10, 0);
+
+    add(analogClock);
+}
+
+void mainViewBase::setupScreen()
+{
+
+}
+`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Tip__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+    mdxType: "Tip"
+  }, "\u60A8\u53EF\u4EE5\u5728\u7528\u6236\u7A0B\u5F0F\u78BC\u4E2D\u4F7F\u7528AnalogClock\u985E\u4E2D\u7684\u9019\u4E9B\u51FD\u6578\u548C\u5176\u4ED6\u53EF\u7528\u51FD\u6578\u3002 \u5982\u679C\u66F4\u6539\u4E86\u5C0F\u90E8\u4EF6\u7684\u5916\u89C0\uFF0C\u8ACB\u5FC5\u9808\u547C\u53EB ", /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_InlineCode__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+    mdxType: "InlineCode"
+  }, "analogClock.invalidate()"), " \u4EE5\u5F37\u5236\u91CD\u7E6A\u3002"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "user-code"
+  }), `\u7528\u6236\u7A0B\u5F0F\u78BC`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u4E0B\u9762\u7684\u4F8B\u5B50\u5C55\u793A\u4E86\u5982\u4F55\u8A2D\u7F6E\u6642\u9418\u52D5\u4F5C\uFF1A`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_CodeHeader__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+    mdxType: "CodeHeader"
+  }, "mainView.hpp"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("pre", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("code", __spreadValues({
+    parentName: "pre"
+  }, {
+    "className": "language-cpp"
+  }), `#ifndef MAINVIEW_HPP
+#define MAINVIEW_HPP
+
+#include <gui_generated/main_screen/mainViewBase.hpp>
+#include <gui/main_screen/mainPresenter.hpp>
+
+class mainView : public mainViewBase
+{
+public:
+    mainView();
+    virtual ~mainView() {}
+    virtual void setupScreen();
+    virtual void tearDownScreen();
+    virtual void handleTickEvent();
+
+protected:
+    int tickCounter;
+    int analogHours;
+    int analogMinutes;
+    int analogSeconds;
+};
+
+#endif // MAINVIEW_HPP
+
+`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_CodeHeader__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+    mdxType: "CodeHeader"
+  }, "mainView.cpp"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("pre", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("code", __spreadValues({
+    parentName: "pre"
+  }, {
+    "className": "language-cpp"
+  }), `#include <gui/main_screen/mainView.hpp>
+
+mainView::mainView()
+{
+}
+
+void mainView::setupScreen()
+{
+    mainViewBase::setupScreen();
+    analogHours = analogClock.getCurrentHour();
+    analogMinutes = analogClock.getCurrentMinute();
+    analogSeconds = analogClock.getCurrentSecond();
+}
+
+void mainView::tearDownScreen()
+{
+    mainViewBase::tearDownScreen();
+}
+
+void mainView::handleTickEvent()
+{
+    tickCounter++;
+
+    if (tickCounter % 60 == 0)
+    {
+        if (++analogSeconds >= 60)
+        {
+            analogSeconds = 0;
+            if (++analogMinutes >= 60)
+            {
+                analogMinutes = 0;
+                if (++analogHours >= 24)
+                {
+                    analogHours = 0;
+                }
+            }
+        }
+
+        // Update the clocks
+        analogClock.setTime24Hour(analogHours, analogMinutes, analogSeconds);
+    }
+}
+`)), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h3", __spreadValues({}, {
+    "id": "touchgfx-designer-examples"
+  }), `TouchGFX Designer\u7BC4\u4F8B`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("p", null, `\u5982\u9700\u9032\u4E00\u6B65\u77AD\u89E3\u985E\u6BD4\u6642\u9418\uFF0C\u8ACB\u5617\u8A66\u5728TouchGFX Designer\u4E2D\u4F7F\u7528\u4EE5\u4E0B\u7BC4\u4F8B\u5275\u5EFA\u65B0\u61C9\u7528\uFF1A`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_Figure__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+    imageSource: "/img/development/ui-development/ui-templates/clock-example-v4.17.png",
+    mdxType: "Figure"
+  }, "TouchGFX Designer\u4E2D\u7684\u6642\u9418\u7BC4\u4F8B"), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("h2", __spreadValues({}, {
+    "id": "api-reference"
+  }), `API\u53C3\u8003`), /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_site_components_FurtherReading__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+    mdxType: "FurtherReading"
+  }, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)("li", null, /* @__PURE__ */ (0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_0__/* .mdx */ .kt)(_docusaurus_Link__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+    to: "../../../../api/classes/classtouchgfx_1_1_analog_clock",
+    mdxType: "Link"
+  }, "AnalogClock\u985E\u7684API\u53C3\u8003"))));
+}
+;
+MDXContent.isMDXComponent = true;
+
+
+/***/ })
+
+}]);
