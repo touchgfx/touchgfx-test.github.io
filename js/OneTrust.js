@@ -60,40 +60,16 @@ function ReloadPageOnConsentChange() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    var target = document.querySelector('body');
-
     if (typeof Optanon !== "undefined" && Optanon.hasOwnProperty('OnConsentChanged')) {
         Optanon.OnConsentChanged(ReloadPageOnConsentChange);
     }
 
-    const callback = function (mutationsList, observer) {
-        (function () {
-            mutationsList.find(function (mutation) {
-                if (mutation.type === 'childList') {
-                    return !!Array.prototype.find.call(mutation.addedNodes, function (node) {
-                        if (node.localName === 'div' && node.id === 'onetrust-consent-sdk') {
-                            if (document.getElementById('onetrust-banner-sdk')) {
-                                var element = document.querySelector('.onetrust-pc-dark-filter');
-                                element.classList.remove('ot-hide');                       
-                                element.style.zIndex = 9999; 
-                            }      
-                            OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
-                            observer.disconnect();
-                            return true;
-                        }
-                    });
-                }
-            });
-        })();
-    };
-
-    const observer = new MutationObserver(callback);
-
-    observer.observe(target, {
-        attributes: false,
-        childList: true,
-        subtree: false
-    });
+    if (document.getElementById('onetrust-banner-sdk')) {
+        var element = document.querySelector('.onetrust-pc-dark-filter');
+        element.classList.remove('ot-hide');                       
+        element.style.zIndex = 9999; 
+        OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
+    }      
 });
 
 
