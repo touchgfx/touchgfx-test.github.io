@@ -14,6 +14,17 @@ if (isClosed == null) {
 document.write('<script src="https:\/\/cdn.cookielaw.org\/consent\/2fa31965\u002Dd9be\u002D475c\u002Da2b4\u002Da645dd7a65f4\u002Dtest\/otSDKStub.js" type="text/javascript" charSet="UTF-8" data-domain-script="2fa31965\u002Dd9be\u002D475c\u002Da2b4\u002Da645dd7a65f4\u002Dtest"></' + 'script>');
 
 function OptanonWrapper() {
+    var dtmCookiesEnabled = typeof OnetrustActiveGroups !== "undefined" 
+    && OnetrustActiveGroups.indexOf(",C0002,")>=0 
+    && OnetrustActiveGroups.indexOf(",C0003,")>=0 
+    && OnetrustActiveGroups.indexOf(",C0004,")>=0
+        
+    if (dtmCookiesEnabled) { 
+        var dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-b2e52930cd27-development.min.js";
+        dtmScript = document.createElement('script'); 
+        dtmScript.src = dtmURL;
+        document.head.appendChild(dtmScript);
+    }
 };
 
 window.STFED = typeof STFED === 'undefined' ? {} : STFED;
@@ -60,40 +71,16 @@ function ReloadPageOnConsentChange() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    var target = document.querySelector('body');
-
     if (typeof Optanon !== "undefined" && Optanon.hasOwnProperty('OnConsentChanged')) {
         Optanon.OnConsentChanged(ReloadPageOnConsentChange);
     }
 
-    const callback = function (mutationsList, observer) {
-        (function () {
-            mutationsList.find(function (mutation) {
-                if (mutation.type === 'childList') {
-                    return !!Array.prototype.find.call(mutation.addedNodes, function (node) {
-                        if (node.localName === 'div' && node.id === 'onetrust-consent-sdk') {
-                            if (document.getElementById('onetrust-banner-sdk')) {
-                                var element = document.querySelector('.onetrust-pc-dark-filter');
-                                element.classList.remove('ot-hide');                       
-                                element.style.zIndex = 9999; 
-                            }      
-                            OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
-                            observer.disconnect();
-                            return true;
-                        }
-                    });
-                }
-            });
-        })();
-    };
-
-    const observer = new MutationObserver(callback);
-
-    observer.observe(target, {
-        attributes: false,
-        childList: true,
-        subtree: false
-    });
+    if (document.getElementById('onetrust-banner-sdk')) {
+        var element = document.querySelector('.onetrust-pc-dark-filter');
+        element.classList.remove('ot-hide');                       
+        element.style.zIndex = 9999; 
+        OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
+    }      
 });
 
 
