@@ -25,6 +25,17 @@ function OptanonWrapper() {
         dtmScript.src = dtmURL;
         document.head.appendChild(dtmScript);
     }
+
+    if (typeof Optanon !== "undefined" && Optanon.hasOwnProperty('OnConsentChanged')) {
+        Optanon.OnConsentChanged(ReloadPageOnConsentChange);
+    }
+
+    if (document.getElementById('onetrust-banner-sdk')) {
+        var element = document.querySelector('.onetrust-pc-dark-filter');
+        element.classList.remove('ot-hide');                       
+        element.style.zIndex = 9999; 
+        OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
+    }      
 };
 
 window.STFED = typeof STFED === 'undefined' ? {} : STFED;
@@ -68,21 +79,6 @@ function ReloadPageOnConsentChange() {
         }
     }
 }
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    if (typeof Optanon !== "undefined" && Optanon.hasOwnProperty('OnConsentChanged')) {
-        Optanon.OnConsentChanged(ReloadPageOnConsentChange);
-    }
-
-    if (document.getElementById('onetrust-banner-sdk')) {
-        var element = document.querySelector('.onetrust-pc-dark-filter');
-        element.classList.remove('ot-hide');                       
-        element.style.zIndex = 9999; 
-        OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
-    }      
-});
-
 
 STFED.Cookies = {
     areCookiesEnabled: (function () {
