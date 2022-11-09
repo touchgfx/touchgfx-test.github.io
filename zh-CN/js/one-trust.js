@@ -16,14 +16,16 @@ document.write('<script src="https:\/\/cdn.cookielaw.org\/consent\/2fa31965\u002
 function OptanonWrapper() {
     var dtmCookiesEnabled = typeof OnetrustActiveGroups !== "undefined" 
     && OnetrustActiveGroups.indexOf(",C0002,")>=0 
-    && OnetrustActiveGroups.indexOf(",C0003,")>=0 
     && OnetrustActiveGroups.indexOf(",C0004,")>=0
         
-    if (dtmCookiesEnabled) { 
-        var dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-b2e52930cd27-development.min.js";
-        dtmScript = document.createElement('script'); 
-        dtmScript.src = dtmURL;
-        document.head.appendChild(dtmScript);
+    if (dtmCookiesEnabled) {
+        var dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-2a820308696f.min.js"
+        if (window.location.hostname === "localhost" || window.location.pathname.includes("touchgfx-test.github.io")) {
+            dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-b2e52930cd27-development.min.js"
+        }
+        dtmScript = document.createElement('script')
+        dtmScript.src = dtmURL
+        document.head.appendChild(dtmScript)
     }
 
     if (typeof Optanon !== "undefined" && Optanon.hasOwnProperty('OnConsentChanged')) {
