@@ -14,7 +14,7 @@ if (isClosed == null) {
 document.write('<script src="https:\/\/cdn.cookielaw.org\/scripttemplates\/otSDKStub.js" type="text/javascript" charSet="UTF-8" data-domain-script="2bf4ec2c-9ff7-4a86-9da0-b8997eac9f7c-test"></' + 'script>');
 
 function OptanonWrapper() {
-    var dtmCookiesEnabled = typeof OnetrustActiveGroups !== "undefined" 
+    /*var dtmCookiesEnabled = typeof OnetrustActiveGroups !== "undefined" 
     && OnetrustActiveGroups.indexOf(",C0002,")>=0 
     && OnetrustActiveGroups.indexOf(",C0004,")>=0
         
@@ -37,7 +37,7 @@ function OptanonWrapper() {
         element.classList.remove('ot-hide');                       
         element.style.zIndex = 9999; 
         OneTrust.OnConsentChanged(ReloadPageOnConsentChange);
-    }      
+    }*/      
 };
 
 window.STFED = typeof STFED === 'undefined' ? {} : STFED;
