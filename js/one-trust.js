@@ -11,6 +11,8 @@ var isClosed = getOptanonCookie("OptanonAlertBoxClosed");
 if (isClosed == null) {
     document.cookie = 'OptanonConsent=; domain=' + window.location.host + '; Path=/; Expires=Thu, 01 Jan 2000 00:00:01 GMT;';
 }
+
+document.write('<script src="https:\/\/cdn.cookielaw.org\/consent\/2bf4ec2c-9ff7-4a86-9da0-b8997eac9f7c-test\/OtAutoBlock.js" type="text/javascript"></' + 'script>');
 document.write('<script src="https:\/\/cdn.cookielaw.org\/scripttemplates\/otSDKStub.js" type="text/javascript" charSet="UTF-8" data-domain-script="2bf4ec2c-9ff7-4a86-9da0-b8997eac9f7c-test"></' + 'script>');
 
 function OptanonWrapper() {
