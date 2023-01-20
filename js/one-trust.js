@@ -13,15 +13,19 @@ if (isClosed == null) {
 }
 document.write('<script src="https:\/\/cdn.cookielaw.org\/scripttemplates\/otSDKStub.js" type="text/javascript" charSet="UTF-8" data-domain-script="2bf4ec2c-9ff7-4a86-9da0-b8997eac9f7c-test"></' + 'script>');
 
-var dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-2a820308696f.min.js"
-if (window.location.hostname === "localhost" || window.location.pathname.includes("touchgfx-test.github.io")) {
-    dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-b2e52930cd27-development.min.js"
-}
-dtmScript = document.createElement('script')
-dtmScript.src = dtmURL
-document.head.appendChild(dtmScript)
+// var dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-2a820308696f.min.js"
+// if (window.location.hostname === "localhost" || window.location.pathname.includes("touchgfx-test.github.io")) {
+//     dtmURL = "https://assets.adobedtm.com/a86419113799/01b0e221c0d2/launch-b2e52930cd27-development.min.js"
+// }
+
+document.write('<script data-src="https:\/\/assets.adobedtm.com\/a86419113799\/01b0e221c0d2\/launch-b2e52930cd27-development.min.js" class="optanon-category-[C0002,C0004]"></' + 'script>');
 
 function OptanonWrapper() {
+    if (typeof OnetrustActiveGroups !== "undefined") {
+        if (OnetrustActiveGroups.indexOf(",C0002,")>=0) console.log("***C0002 accepted")
+        if (OnetrustActiveGroups.indexOf(",C0004,")>=0) console.log("***C0004 accepted")
+    }
+
     /*var dtmCookiesEnabled = typeof OnetrustActiveGroups !== "undefined" 
     && OnetrustActiveGroups.indexOf(",C0002,")>=0 
     && OnetrustActiveGroups.indexOf(",C0004,")>=0
